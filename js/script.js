@@ -64,7 +64,7 @@ function showPage(list, page) {
          //find list
          const fullList = document.getElementsByClassName("student-item cf")[0];
             
-            let studentDiv =document.createElement('div');
+            let studentDiv = document.createElement('div');
             //add class
             studentDiv.className = "student-details";
             //Add div
@@ -115,11 +115,9 @@ function showPage(list, page) {
                //add class
                   dateDetails.className = "date";
                //add text content
-                  dateDetails.textContent = date;
+                  dateDetails.textContent = `Joined ${date}`;
             //addSpan2
             joinedDetails.appendChild(dateDetails);
-            //find span2
-            //let dateJoined = document.getElementsByClassName('date')[0];
 
             studentList = studentList.innerHTML; 
       }
