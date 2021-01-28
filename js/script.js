@@ -22,9 +22,8 @@ function showPage(list, page) {
    let startIndex = ((page * 9) - 9);
    let endIndex = (page * 9); 
 
-   let studentList = document.getElementsByClassName('student-list')[0];
+   const studentList = document.getElementsByClassName('student-list')[0];
    studentList.innerHTML = '';
-
 
    for(let i = 0; i < list.length; i++) {
 
@@ -39,87 +38,93 @@ function showPage(list, page) {
          let image = list[i].picture.medium;
 
          
-         // let newHtml = `
-         //    <li class="student-item cf">
-         //       <div class="student-details">
-         //          <img class="avatar" src=${image} alt="Profile Picture">
-         //          <h3>${fullName}</h3>
-         //          <span class="email">${email}</span>
-         //       </div>
-         //       <div class="joined-details">
-         //          <span class="date">${date}</span>
-         //       </div>
-         //    </li>
-         // `;
+         let newHtml = `
+            <li class="student-item cf">
+               <div class="student-details">
+                  <img class="avatar" src=${image} alt="Profile Picture">
+                  <h3>${fullName}</h3>
+                  <span class="email">${email}</span>
+               </div>
+               <div class="joined-details">
+                  <span class="date">Joined ${date}</span>
+               </div>
+            </li>
+         `;
          
-         // studentList.insertAdjacentHTML('beforeend', newHtml);  
+         studentList.insertAdjacentHTML('beforeend', newHtml);  
 
       
-         let li = document.createElement('li');
-         //add class
-         li.className ="student-item cf";
-         //Add list
-         console.log(studentList);
-         studentList.appendChild(li);
-         //find list
-         const fullList = document.getElementsByClassName("student-item cf")[0];
+         // let li = document.createElement('li');
+         // //add class
+         // li.className ="student-item cf";
+         // //Add list
+         // studentList.appendChild(li);
+         // //find list
+         // const fullList = document.getElementsByClassName("student-item cf")[0];
             
-            let studentDiv = document.createElement('div');
-            //add class
-            studentDiv.className = "student-details";
-            //Add div
-            fullList.appendChild(studentDiv);
-            //find new div items
-            const studentDetails = document.getElementsByClassName('student-details')[0];
+         //    let studentDiv = document.createElement('div');
+         //    //add class
+         //    studentDiv.className = "student-details";
+         //    //Add div
+         //    fullList.appendChild(studentDiv);
+         //    //find new div items
+         //    const studentDetails = document.getElementsByClassName('student-details')[0];
                
-               let imageFile = document.createElement('img');
-                  //add class
-                  imageFile.className = "avatar";
-                  //add source
-                  imageFile.src = image;
-                  //add ALT 
-                  imageFile.alt = "Profile Picture";
-               //addImage
-               studentDetails.appendChild(imageFile);
-               //find image
-               const studentImage = document.getElementsByClassName('avatar')[0];
+         //       let imageFile = document.createElement('img');
+         //          //add class
+         //          imageFile.className = "avatar";
+         //          //add source
+         //          imageFile.src = image;
+         //          //add ALT 
+         //          imageFile.alt = "Profile Picture";
+         //       //addImage
+         //       studentDetails.appendChild(imageFile);
+         //       //find image
+         //       const studentImage = document.getElementsByClassName('avatar')[0];
 
-               let h3Name = document.createElement('h3');
-                  //add text content
-                  h3Name.textContent = fullName;
-               //addH3
-               studentDetails.insertAdjacentElement('beforeend', h3Name);
-               //find h3 elements
-               const studentName = document.getElementsByTagName('h3')[0];
+         //       let h3Name = document.createElement('h3');
+         //          //add text content
+         //          h3Name.textContent = fullName;
+         //       //addH3
+         //       studentDetails.insertAdjacentElement('beforeend', h3Name);
+         //       //find h3 elements
+         //       const studentName = document.getElementsByTagName('h3')[0];
 
-               let spanEmail = document.createElement('span');
-                  //add class
-                  spanEmail.className = "email";
-                  //add textContent
-                  spanEmail.textContent = email;
-                  //add SPAN
-                  studentDetails.insertAdjacentElement('beforeend', spanEmail);
-                  const studentEmail = document.getElementsByClassName('email');
+         //       let spanEmail = document.createElement('span');
+         //          //add class
+         //          spanEmail.className = "email";
+         //          //add textContent
+         //          spanEmail.textContent = email;
+         //          //add SPAN
+         //          studentDetails.insertAdjacentElement('beforeend', spanEmail);
+         //          //const studentEmail = document.getElementsByClassName('email');
          
-            //div
-            let joinedDiv = document.createElement('div');
-               //add class
-                  joinedDiv.className = "joined-details";
-            //add div2
-            studentDetails.insertAdjacentElement('afterend', joinedDiv);
-            //find div2
-            const joinedDetails = document.getElementsByClassName('joined-details')[0];
+         //    //div
+         //    let joinedDiv = document.createElement('div');
+         //       //add class
+         //          joinedDiv.className = "joined-details";
+         //    //add div2
+         //    studentDetails.insertAdjacentElement('afterend', joinedDiv);
+         //    //find div2
+         //    const joinedDetails = document.getElementsByClassName('joined-details')[0];
 
-            //span
-               let dateDetails = document.createElement('span');
-               //add class
-                  dateDetails.className = "date";
-               //add text content
-                  dateDetails.textContent = `Joined ${date}`;
-            //addSpan2
-            joinedDetails.appendChild(dateDetails);
+         //    //span
+         //       let dateDetails = document.createElement('span');
+         //       //add class
+         //          dateDetails.className = "date";
+         //       //add text content
+         //          dateDetails.textContent = `Joined ${date}`;
+         //    //addSpan2
+         //    joinedDetails.appendChild(dateDetails);
 
-            studentList = studentList.innerHTML; 
+         //    // const test = studentList.innerHTML;
+         //    // for(let i = 0; i < studentList.length; i++) {
+         //    //    studentList[i].insertAdjacentElement('beforeend', test);
+         //    // }
+
+
+         //    studentList.innerHTML; 
+         //    console.log(studentList);
       }
    }
 }
