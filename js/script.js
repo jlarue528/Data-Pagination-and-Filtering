@@ -27,7 +27,7 @@ function showPage(list, page) {
          
          const firstName = list[i].name.first;
          const lastName = list[i].name.last;
-         let fullName = `${firstName} ${lastName}`
+         const fullName = `${firstName} ${lastName}`
 
          const email = list[i].email;
          const date = list[i].registered.date;
