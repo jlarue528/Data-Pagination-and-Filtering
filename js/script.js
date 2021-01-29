@@ -4,18 +4,9 @@ FSJS Project 2 - Data Pagination and Filtering
 */
 
 
-
 /*
-For assistance:
-   Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
-   Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
+   Function will insert elements on the page that display information of 9 students per page
 */
-
-
-/*
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
-
 
 function showPage(list, page) {
    let startIndex = ((page * 9) - 9);
@@ -64,7 +55,7 @@ function showPage(list, page) {
 }
 
 /*
-This function will create and insert/append the elements needed for the pagination buttons
+   Function creates elements for pagination buttons on the page
 */
 
 function addPagination(list) {
@@ -72,20 +63,27 @@ function addPagination(list) {
    let numOfPages = Math.ceil(list.length/9);
 
    const linkList = document.querySelector('.link-list');
-
    linkList.innerHTML = '';
 
+   /*
+      For loop is creating individual buttons on page
+   */
    for (let i = 1; i <= numOfPages; i++) {
       let pageNumber = [i];
-      let button =
+      let buttonHTML =
          `<li>
             <button type="button">${pageNumber}</button>
          </li>`;
-      linkList.insertAdjacentHTML('beforeend', button);
+      linkList.insertAdjacentHTML('beforeend', buttonHTML);
 
-      let firstButton = document.querySelector('button');
-      firstButton.className = 'active';
+      let pageButton = document.querySelector('button');
+      pageButton.className = 'active';
       }
+
+      /*
+         Event listener is listening for click events on
+         the pagination buttons on the page
+      */
    
       linkList.addEventListener('click', (e) => {
          let clickEvent = e.target;
@@ -95,7 +93,6 @@ function addPagination(list) {
 
             clickEvent.className = 'active';
             let clickEventContent = clickEvent.textContent;
-            console.log(clickEventContent);
 
             showPage(list, clickEventContent);
          }
@@ -104,7 +101,7 @@ function addPagination(list) {
 
    
    /**
-    * Call Functions
+      Calling Functions
     */ 
    showPage(data, 1);
    addPagination(data);
