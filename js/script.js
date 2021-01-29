@@ -10,8 +10,8 @@ FSJS Project 2 - Data Pagination and Filtering
 const studentList = document.getElementsByClassName('student-list')[0];
 
 function showPage(list, page) {
-   let startIndex = ((page * 9) - 9);
-   let endIndex = (page * 9); 
+   const startIndex = ((page * 9) - 9);
+   const endIndex = (page * 9); 
 
    // const studentList = document.getElementsByClassName('student-list')[0];
    studentList.innerHTML = '';
@@ -25,19 +25,19 @@ function showPage(list, page) {
             list parameter 
          */ 
          
-         let firstName = list[i].name.first;
-         let lastName = list[i].name.last;
+         const firstName = list[i].name.first;
+         const lastName = list[i].name.last;
          let fullName = `${firstName} ${lastName}`
 
-         let email = list[i].email;
-         let date = list[i].registered.date;
-         let image = list[i].picture.medium;
+         const email = list[i].email;
+         const date = list[i].registered.date;
+         const image = list[i].picture.medium;
 
          /*
             newHTML variable provides individual student info that will
             be shown on the page
          */
-         let newHtml = `
+         const newHtml = `
             <li class="student-item cf">
                <div class="student-details">
                   <img class="avatar" src=${image} alt="Profile Picture">
@@ -61,7 +61,7 @@ function showPage(list, page) {
 
 function addPagination(list) {
 
-   let numOfPages = Math.ceil(list.length/9);
+   const numOfPages = Math.ceil(list.length/9);
 
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
@@ -70,14 +70,14 @@ function addPagination(list) {
       For loop is creating individual buttons on page
    */
    for (let i = 1; i <= numOfPages; i++) {
-      let pageNumber = [i];
-      let buttonHTML =
+      const pageNumber = [i];
+      const buttonHTML =
          `<li>
             <button type="button">${pageNumber}</button>
          </li>`;
       linkList.insertAdjacentHTML('beforeend', buttonHTML);
 
-      let pageButton = document.querySelector('button');
+      const pageButton = document.querySelector('button');
       pageButton.className = 'active';
       }
 
@@ -87,13 +87,13 @@ function addPagination(list) {
       */
    
       linkList.addEventListener('click', (e) => {
-         let clickEvent = e.target;
+         const clickEvent = e.target;
          if(clickEvent.tagName == 'BUTTON') {
-            let activeButton = document.querySelector('.active');
+            const activeButton = document.querySelector('.active');
             activeButton.className = '';
 
             clickEvent.className = 'active';
-            let clickEventContent = clickEvent.textContent;
+            const clickEventContent = clickEvent.textContent;
 
             showPage(list, clickEventContent);
          }
